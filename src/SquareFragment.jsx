@@ -1,4 +1,4 @@
-export default function SquareFragment({ value }) {
+export default function SquareFragment({ value, onSquareClick }) {
   return (
     <>
       <button
