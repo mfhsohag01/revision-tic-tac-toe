@@ -1,16 +1,46 @@
-# React + Vite
+# 🎮 Tic-Tac-Toe — React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+একটা stylish, fully functional Tic-Tac-Toe game — React state lifting এবং time travel feature সহ।
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [visionary-torte-ed4b35.netlify.app](https://visionary-torte-ed4b35.netlify.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- ✅ Classic Tic-Tac-Toe gameplay (X vs O)
+- ✅ Win detection (৮টা সম্ভাব্য winning line চেক করে)
+- ✅ **Time Travel** — পুরনো যেকোনো move-এ ফিরে যাওয়া যায়
+- ✅ Move history list
+- ✅ Dark glassmorphism UI with neon glow effects
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Built With
 
-## Expanding the ESLint configuration
+- React (Vite)
+- Tailwind CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Getting Started
+
+```bash
+git clone <your-repo-url>
+cd <project-folder>
+npm install
+npm run dev
+```
+
+## 📁 Project Structure
+
+\`\`\`
+src/
+├── App.jsx
+├── Game.jsx # State owner (history, currentMove)
+├── Square.jsx # Board logic (winner check, click handler)
+├── SquareFragment.jsx # Individual cell UI
+\`\`\`
+
+## 📝 Learnings
+
+এই প্রজেক্টে শেখা মূল React concept:
+
+- State lifting (child → parent)
+- Props drilling
+- Derived state (`xIsNext` computed from `currentMove`)
+- Immutable array updates (`slice`, spread)
