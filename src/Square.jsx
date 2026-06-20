@@ -4,10 +4,37 @@ export default function Square({ xIsNext, squares, onPlay }) {
   const winner = calculateWinner(squares);
   let status;
   if (winner) {
-    status = `Winner is ${winner}`;
+    status = (
+      <>
+        Winner is{" "}
+        <span
+          className={
+            winner === "X"
+              ? "text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.6)]"
+              : "text-fuchsia-400 drop-shadow-[0_0_10px_rgba(232,121,249,0.6)]"
+          }
+        >
+          {winner}
+        </span>
+      </>
+    );
   } else {
-    status = "Next player " + (xIsNext ? "X" : "O");
+    status = (
+      <>
+        Next player{" "}
+        <span
+          className={
+            xIsNext
+              ? "text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.6)]"
+              : "text-fuchsia-400 drop-shadow-[0_0_10px_rgba(232,121,249,0.6)]"
+          }
+        >
+          {xIsNext ? "X" : "O"}
+        </span>
+      </>
+    );
   }
+
   const handleClick = (i) => {
     if (squares[i] || calculateWinner(squares)) {
       return;
@@ -20,9 +47,10 @@ export default function Square({ xIsNext, squares, onPlay }) {
     }
     onPlay(nextSquares);
   };
+
   return (
     <>
-      <div>{status}</div>
+      <div className="text-2xl font-bold text-white mb-4">{status}</div>
       <div className="flex flex-row">
         <SquareFragment
           value={squares[0]}
