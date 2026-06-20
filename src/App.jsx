@@ -1,9 +1,9 @@
-import Square from "./Square";
+import Game from "./Game";
 
 export default function App() {
   return (
     <div>
-      <Square />
+      <Game />
     </div>
   );
 }
